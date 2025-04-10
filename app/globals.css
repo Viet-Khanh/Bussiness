@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    /* --- New Fresh Blue Color Scheme --- */
+    --background: 0 0% 100%; /* White */
+    --foreground: 215 28% 17%; /* Dark Blue-Gray */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 215 28% 17%; /* Dark Blue-Gray */
+ 
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 215 28% 17%; /* Dark Blue-Gray */
+ 
+    --primary: 205 90% 50%; /* Bright Blue */
+    --primary-foreground: 0 0% 100%; /* White */
+ 
+    --secondary: 210 40% 96.1%; /* Light Grayish Blue */
+    --secondary-foreground: 215 28% 17%; /* Dark Blue-Gray */
+ 
+    --muted: 210 40% 96.1%; /* Light Grayish Blue */
+    --muted-foreground: 215 16% 47%; /* Medium Grayish Blue */
+ 
+    --accent: 195 90% 55%; /* Lighter Bright Blue / Cyan */
+    --accent-foreground: 215 28% 17%; /* Dark Blue-Gray */
+ 
+    --destructive: 0 84.2% 60.2%; /* Red */
+    --destructive-foreground: 0 0% 100%; /* White */
+
+    --border: 214 32% 91%; /* Light Gray */
+    --input: 214 32% 91%; /* Light Gray */
+    --ring: 205 90% 50%; /* Bright Blue */
+ 
+    --radius: 0.5rem;
+    /* --- End New Color Scheme --- */
+  }
+ 
+  .dark {
+    /* --- New Fresh Blue Dark Mode --- */
+    --background: 215 28% 17%; /* Dark Blue-Gray */
+    --foreground: 0 0% 98%; /* Almost White */
+ 
+    --card: 215 25% 22%; /* Slightly Lighter Dark Blue-Gray */
+    --card-foreground: 0 0% 98%; /* Almost White */
+ 
+    --popover: 215 28% 17%; /* Dark Blue-Gray */
+    --popover-foreground: 0 0% 98%; /* Almost White */
+ 
+    --primary: 205 90% 55%; /* Bright Blue (Slightly lighter for dark mode) */
+    --primary-foreground: 215 28% 17%; /* Dark Blue-Gray */
+ 
+    --secondary: 215 20% 25%; /* Darker Grayish Blue */
+    --secondary-foreground: 0 0% 98%; /* Almost White */
+ 
+    --muted: 215 20% 25%; /* Darker Grayish Blue */
+    --muted-foreground: 215 14% 65%; /* Lighter Grayish Blue */
+ 
+    --accent: 195 90% 60%; /* Lighter Bright Blue / Cyan (Slightly lighter for dark mode) */
+    --accent-foreground: 215 28% 17%; /* Dark Blue-Gray */
+ 
+    --destructive: 0 62.8% 50.6%; /* Red (Slightly lighter for dark mode) */
+    --destructive-foreground: 0 0% 98%; /* Almost White */
+ 
+    --border: 215 20% 30%; /* Medium Dark Grayish Blue */
+    --input: 215 20% 30%; /* Medium Dark Grayish Blue */
+    --ring: 205 90% 55%; /* Bright Blue */
+    /* --- End New Dark Mode --- */
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Add a subtle transition for theme changes */
+    @apply transition-colors duration-200;
+  }
+}
+
+/* Gradient heading - Updated to use new primary/accent */
+.gradient-heading {
+  @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+}
+
+/* Hover card effect - Updated border color */
+.hover-card {
+  @apply transition-all duration-300 hover:shadow-lg hover:border-primary/30;
+}
+
+/* Vietnam border style - Updated border color */
+.vn-border {
+  @apply border border-primary/20 relative;
+}
+
+/* Highlight shadow - Updated shadow color */
+.highlight-shadow {
+  @apply shadow-md hover:shadow-lg hover:shadow-primary/10;
+}
+
+/* Custom scrollbar - Updated colors */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary/50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/60 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/80;
+}
